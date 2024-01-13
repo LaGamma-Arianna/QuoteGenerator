@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZn8Y4eEG5fUH55Tl7C8XgeLcPmSTuurK9tT7CpZSU+uj2Bkqy4l9qz5lAx0Y8" crossorigin="anonymous">
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <title>Quote Generator</title>
+  </head>
+
+  <body>
+    <wrapper id="quote-box">
+        <div id="text"></div>
+        <div id="author"></div>
+        <button type="button" id="new-quote" class="btn" onClick="generateQuote();"><img src="arrows-rotate-solid.svg" alt="none"> </button>
+        <a href="#" id="tweet-quote">Tweet Quote<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter-x" viewBox="0 0 16 16">
+            <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"/>
+          </svg></a>
+    </wrapper>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+    <script>
+        const QUOTEBANK = [
+            {
+                quote: "Our lives begin to end the day we become silent about things that matter.",
+                author: "Martin Luther King Jr."
+            }, {
+                quote: "Winning isn’t everything, but wanting to win is.",
+                author: "- Vince Lombardi"
+            }, {
+                quote: "Two roads diverged in a wood, and I—I took the one less traveled by, And that has made all the difference.",
+                author: "- Robert Frost"
+            }, {
+                quote: "If you look at what you have in life, you’ll always have more. If you look at what you don’t have in life, you’ll never have enough.",
+                author: "- Oprah Winfrey"
+            }, {
+                quote: "The most common way people give up their power is by thinking they don’t have any.",
+                author: "- Alice Walker"
+            }, {
+                quote: "Education costs money. But then so does ignorance.",
+                author: "- Sir Claus Moser"
+            }, {
+                quote: "When everything seems to be going against you, remember that the airplane takes off against the wind, not with it.",
+                author: "- Henry Ford"
+            }, {
+                quote: "Whatever you can do, or dream you can, begin it. Boldness has genius, power and magic in it.",
+                author: "- Johann Wolfgang von Goethe"
+            }, {
+                quote: "If you want your children to turn out well, spend twice as much time with them, and half as much money.",
+                author: "- Abigail Van Buren"
+            }, {
+                quote: "Every child is an artist. The problem is how to remain an artist once he grows up.",
+                author: "- Pablo Picasso"
+            }, {
+                quote: "Someday is not a day of the week.",
+                author: "- Denise Brennan-Nelson"
+            }, {
+                quote: "Your time is limited, so don't waste it living someone else's life.",
+                author: "- Steve Jobs"
+            }, {
+                quote: "Nothing is really work unless you would rather be doing something else.",
+                author: "- J.M. Barrie"
+            }, {
+                quote: "Without hustle, talent will only carry you so far.",
+                author: "- Gary Vaynerchuk"
+            }, {
+                quote: "Working hard for something we don't care about is called stressed; working hard for something we love is called passion.",
+                author: "- Simon Sinek"
+            }, {
+                quote: "Always do your best. What you plant now, you will harvest later.",
+                author: "- Og Mandino"
+            }, {
+                quote: "Through discipline comes freedom.",
+                author: "- Aristotle"
+            }, {
+                quote: "Success is the sum of small efforts, repeated day in and day out.",
+                author: "- Robert Collier"
+            }, {
+                quote: "What could we accomplish if we knew we could not fail?",
+                author: "- Eleanor Roosevelt"
+            }, {
+                quote: "Life begins at the end of your comfort zone.",
+                author: "- Neale Donald Walsch"
+            }, {
+                quote: "It always seems impossible until it’s done.",
+                author: "- Nelson Mandela"
+            }, {
+                quote: "Success is not the absence of failure; it’s the persistence through failure.",
+                author: "- Aisha Tyler"
+            }, {
+                quote: "Today’s accomplishments were yesterday’s impossibilities.",
+                author: "- Robert H. Schuller"
+            }, {
+                quote: "Live as if you were to die tomorrow. Learn as if you were to live forever.",
+                author: "- Mahatma Gandhi"
+            }
+        ];
+        const COLORS = ["#D81159", "#FFBC42", "#8F2D56", "#218380", "#73D2DE", "#C5F4E0", "#E6EFE9", "#C2EABA", "#320E3B", "#7DCFB6", "#FBD1A2", "#B8E1FF", "#FBB7C0", "#4F000B", "#252627", "#DBB3B1"];
+        window.onload = init;
+        function init() {
+            generateQuote();
+        }
+
+        function generateQuote() {
+            console.log("Quote Generated");
+            const randomIndex = Math.floor(Math.random() * QUOTEBANK.length);
+            const randomColorIndex = Math.floor(Math.random() * COLORS.length);
+            document.body.style.backgroundColor = COLORS[randomColorIndex];
+            document.getElementById("text").innerText = QUOTEBANK[randomIndex].quote;
+            document.getElementById("author").innerText = QUOTEBANK[randomIndex].author;
+        }
+    </script>
+  </body>
+</html>
